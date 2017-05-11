@@ -14,12 +14,21 @@
 <script>
     var person = {
         name: "Brad",
-        age: 35
+        age: 35,
+        address:{
+            street: "5 main st",
+            city: "Boston"
+        },
+        children:["Brianna", "Nicholas"]
     };    // Üst ifade bir javascript değişkenidir.
-    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
-    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
-    console.log(person.name);
-    console.log(person.age);
+//    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
+//    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
+//    console.log(person.name);
+//    console.log(person.age);
+    console.log(person.address.street); // Javascript değişkenine erişim
+    console.log(person.children[0]);    // Javascript değişken dizilerine erişim
+    console.log(person.children[1]);    // Javascript değişken dizilerine erişim
+
 </script>
 
 </body>
