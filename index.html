@@ -5,7 +5,7 @@
     <title>JSON Sandbox</title>
 </head>
 <body>
-
+<ul id="people"></ul>
 
 <script>
     var person = {
@@ -41,13 +41,20 @@
         }
 
     ];  // People object array
-    console.log(people[0]);
-    console.log(people[0].name);
-    console.log(people[0].age);
-    console.log(people[1]);
-    console.log(people[1].name);
-    console.log(people[1].age);
-    console.log(people[1].children[1]);
+    //    console.log(people[0]);
+    //    console.log(people[0].name);
+    //    console.log(people[0].age);
+    //    console.log(people[1]);
+    //    console.log(people[1].name);
+    //    console.log(people[1].age);
+    //    console.log(people[1].children[1]);
+    var output = '';
+    for (var i = 0; i < people.length; i++) {
+//        console.log(people[i])
+        output += '<li>' + people[i].name + '</li>';
+    }
+    document.getElementById('people').innerHTML = output;
+
 </script>
 
 </body>
