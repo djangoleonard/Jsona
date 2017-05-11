@@ -8,15 +8,15 @@
 <ul id="people"></ul>
 
 <script>
-    var person = {
-        name: "Brad",
-        age: 35,
-        address: {
-            street: "5 main st",
-            city: "Boston"
-        },
-        children: ["Brianna", "Nicholas"]
-    };    // Üst ifade bir javascript değişkenidir.
+    //    var person = {
+    //        name: "Brad",
+    //        age: 35,
+    //        address: {
+    //            street: "5 main st",
+    //            city: "Boston"
+    //        },
+    //        children: ["Brianna", "Nicholas"]
+    //    };    // Üst ifade bir javascript değişkenidir.
     //    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
     //    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
     //    console.log(person.name);
@@ -25,22 +25,22 @@
     //    console.log(person.children[0]);    // Javascript değişken dizilerine erişim
     //    console.log(person.children[1]);    // Javascript değişken dizilerine erişim
 
-    var people = [
-        {
-            name: "Brad",
-            age: 35
-        },
-        {
-            name: "John",
-            age: 40,
-            children: ["Ahmet", "Mehmet"]
-        },
-        {
-            name: "Sara",
-            age: 25
-        }
-
-    ];  // People object array
+    //    var people = [
+    //        {
+    //            name: "Brad",
+    //            age: 35
+    //        },
+    //        {
+    //            name: "John",
+    //            age: 40,
+    //            children: ["Ahmet", "Mehmet"]
+    //        },
+    //        {
+    //            name: "Sara",
+    //            age: 25
+    //        }
+    //
+    //    ];  // People object array
     //    console.log(people[0]);
     //    console.log(people[0].name);
     //    console.log(people[0].age);
@@ -48,13 +48,31 @@
     //    console.log(people[1].name);
     //    console.log(people[1].age);
     //    console.log(people[1].children[1]);
-    var output = '';
-    for (var i = 0; i < people.length; i++) {
-//        console.log(people[i])
-        output += '<li>' + people[i].name + '</li>';
-    }
-    document.getElementById('people').innerHTML = output;
-
+    //    var output = '';
+    //    for (var i = 0; i < people.length; i++) {
+    ////        console.log(people[i])
+    //        output += '<li>' + people[i].name + '</li>';
+    //    }
+    //    document.getElementById('people').innerHTML = output;
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            // Typical action to be performed when the document is ready:
+//            console.log(xhttp.responseText); // Javascript object access
+            var response = JSON.parse(xhttp.responseText);
+//            console.log(response.people);
+//            document.getElementById("people").innerHTML = xhttp.responseText;
+            var people = response.people;
+            var output = '';
+            for (var i = 0; i < people.length; i++) {
+                //        console.log(people[i])
+                output += '<li>' + people[i].name + '</li>';
+            }
+            document.getElementById('people').innerHTML = output;
+        }
+    };
+    xhttp.open("GET", "people.json", true);
+    xhttp.send();
 </script>
 
 </body>
