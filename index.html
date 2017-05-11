@@ -7,28 +7,47 @@
 <body>
 
 
-
-
-
-
 <script>
     var person = {
         name: "Brad",
         age: 35,
-        address:{
+        address: {
             street: "5 main st",
             city: "Boston"
         },
-        children:["Brianna", "Nicholas"]
+        children: ["Brianna", "Nicholas"]
     };    // Üst ifade bir javascript değişkenidir.
-//    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
-//    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
-//    console.log(person.name);
-//    console.log(person.age);
-    console.log(person.address.street); // Javascript değişkenine erişim
-    console.log(person.children[0]);    // Javascript değişken dizilerine erişim
-    console.log(person.children[1]);    // Javascript değişken dizilerine erişim
+    //    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
+    //    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
+    //    console.log(person.name);
+    //    console.log(person.age);
+    //    console.log(person.address.street); // Javascript değişkenine erişim
+    //    console.log(person.children[0]);    // Javascript değişken dizilerine erişim
+    //    console.log(person.children[1]);    // Javascript değişken dizilerine erişim
 
+    var people = [
+        {
+            name: "Brad",
+            age: 35
+        },
+        {
+            name: "John",
+            age: 40,
+            children: ["Ahmet", "Mehmet"]
+        },
+        {
+            name: "Sara",
+            age: 25
+        }
+
+    ];  // People object array
+    console.log(people[0]);
+    console.log(people[0].name);
+    console.log(people[0].age);
+    console.log(people[1]);
+    console.log(people[1].name);
+    console.log(people[1].age);
+    console.log(people[1].children[1]);
 </script>
 
 </body>
