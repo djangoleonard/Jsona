@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON Sandbox</title>
+</head>
+<body>
+
+
+
+
+
+
+<script>
+    var person = {
+        name: "Brad",
+        age: 35
+    };    // Üst ifade bir javascript değişkenidir.
+    person = JSON.stringify(person);    // Değişkeni JSON a dönüştürür. {"name":"Brad","age":35}
+    person = JSON.parse(person);    // Değikenin JSON içimdeki  değere ulaşmak istenirse bu kullanılmalıdır.
+    console.log(person.name);
+    console.log(person.age);
+</script>
+
+</body>
+</html>
